@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
+import CaourseCard from '../Shared/CaourseCard/CaourseCard';
 import LeftSideNav from '../Shared/LeftSideNav/LeftSideNav';
 
 const Courses = () => {
@@ -11,14 +12,22 @@ const Courses = () => {
             <Row>
                 <Col lg='3'>
                     {
-                       category.map( category => <LeftSideNav key={category.id} category={category}></LeftSideNav>)
+                        category.map(category => <LeftSideNav key={category.id} category={category}></LeftSideNav>)
                     }
                 </Col>
                 <Col lg='9'>
-                    <h2>this is column 2</h2>
+                    <Container>
+                        <Row>
+                            <Col>
+                                {
+                                    category.map(category => <CaourseCard key={category.id} category={category}></CaourseCard>)
+                                }
+                            </Col>
+                        </Row>
+                    </Container>
                 </Col>
             </Row>
-        </Container>
+        </Container >
     );
 };
 

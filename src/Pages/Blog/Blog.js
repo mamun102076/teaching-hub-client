@@ -1,9 +1,8 @@
 import React from 'react';
-import { Container } from 'react-bootstrap';
 
 const Blog = () => {
     return (
-        <Container className='my-5'>
+        <div className='my-5'>
             <div className='mb-4'>
                 <h4>what is `cors`?</h4>
                 <p>Cross-origin resource sharing is a mechanism that allows restricted resources on a web page to be requested from another domain outside the domain from which the first resource was served. A web page may freely embed cross-origin images, stylesheets, scripts, iframes, and videos.</p>
@@ -21,7 +20,7 @@ const Blog = () => {
                 <h4>What is Node? How does Node work?</h4>
                 <p>It is a used as backend service where javascript works on the server-side of the application. This way javascript is used on both frontend and backend. Node. js runs on chrome v8 engine which converts javascript code into machine code, it is highly scalable, lightweight, fast, and data-intensive.</p>
             </div>
-        </Container>
+        </div>
     );
 };
 

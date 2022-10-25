@@ -4,12 +4,16 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
 import './Header.css'
+import brand1 from '../../../assets/brands/brand3.png'
 
 const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>
-                <Navbar.Brand href="#home">Teaching Hub</Navbar.Brand>
+                <img  className='me-3' style={
+                    {'width': '80px'}
+                } src={brand1} alt="" />
+                <Navbar.Brand>Teaching Hub</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">

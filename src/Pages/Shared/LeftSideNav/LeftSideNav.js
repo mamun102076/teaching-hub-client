@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const LeftSideNav = () => {
+const LeftSideNav = ({category}) => {
     return (
         <div>
-            <h2>This is leftside nav</h2>
+            <Link>{category.name}</Link>
         </div>
     );
 };

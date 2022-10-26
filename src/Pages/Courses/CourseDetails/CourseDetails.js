@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
-import {  useLoaderData } from 'react-router-dom';
+import {  Link, useLoaderData } from 'react-router-dom';
 import './CourseDetails.css'
 
 const CourseDetails = ({ category }) => {
@@ -17,6 +17,7 @@ const CourseDetails = ({ category }) => {
                 <h3>Description</h3>
                 <p>{coursedetails.details}</p>
             </div>
+            <Button variant="danger"><Link to='/checkout'>Get premium access</Link></Button>
         </div>
     );
 };

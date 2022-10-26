@@ -2,3 +2,10 @@
     width: 100%;
     height: 300px;
 }
+.coursedetails a{
+    text-decoration: none;
+    color: white;
+}
+.coursedetails a:hover{
+    color: white;
+}

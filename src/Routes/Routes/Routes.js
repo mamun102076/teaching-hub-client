@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
+import CheckOut from "../../Pages/Courses/CheckOut/CheckOut";
 import CourseDetails from "../../Pages/Courses/CourseDetails/CourseDetails";
 import Courses from "../../Pages/Courses/Courses/Courses";
 import LeftSideNav from "../../Pages/Courses/LeftSideNav/LeftSideNav";
@@ -57,6 +58,10 @@ export const router = createBrowserRouter([
                     return fetch(`http://localhost:5000/categories/${params.id}`)
                 }
             },
+            {
+                path: '/checkout',
+                element: <CheckOut></CheckOut>
+            }
         ]
     }
 ])

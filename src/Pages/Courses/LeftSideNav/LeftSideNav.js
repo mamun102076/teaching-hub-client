@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './LeftSideNav.css'
 
 const LeftSideNav = ({category}) => {
     return (
-        <div>
-            <Link>{category.name}</Link>
+        <div className='leftsidenav'>
+            <Link to={`/coursedetails/${category.id}`}>{category.name}</Link>
         </div>
     );
 };

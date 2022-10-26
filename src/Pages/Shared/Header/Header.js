@@ -7,14 +7,23 @@ import './Header.css'
 import brand1 from '../../../assets/brands/brand3.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
+import { Button } from 'react-bootstrap';
+import { FaUser } from 'react-icons/fa';
+import Image from 'react-bootstrap/Image'
 
 const Header = () => {
-    const {user} = useContext(AuthContext)
+    const { user, logOut } = useContext(AuthContext)
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => { })
+            .catch(error => console.error(error))
+    }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark">
+        <Navbar className='nav-bar' collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>
-                <img  className='me-3' style={
-                    {'width': '80px'}
+                <img className='me-3' style={
+                    { 'width': '80px' }
                 } src={brand1} alt="" />
                 <Navbar.Brand>Teaching Hub</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -26,9 +35,26 @@ const Header = () => {
                         <Link to='/faq'>FAQ</Link>
                     </Nav>
                     <Nav>
-                        <Link to='/login'>Login</Link>
-                        <Link to='/register'>Register</Link>
-                        <Link to='/'>{user}</Link>
+                        {
+                            user?.photoURL ?
+                                <Image>{user?.photoURL}</Image>
+                                :
+                                <FaUser></FaUser>
+                        }
+                    </Nav>
+                    <Nav>
+                        {
+                            user?.uid ?
+                                <>
+                                    <Link to='/'>{user?.displayName}</Link>
+                                    <Button onClick={handleLogOut} variant="primary">Log out</Button>
+                                </>
+
+                                :
+                                <>
+                                    <Link to='/login'>Login</Link>
+                                </>
+                        }
                     </Nav>
                 </Navbar.Collapse>
             </Container>

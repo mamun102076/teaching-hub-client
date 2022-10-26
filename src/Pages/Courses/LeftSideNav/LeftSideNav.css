@@ -1,0 +1,13 @@
+.leftsidenav a{
+    background-color: rgb(18, 138, 138);
+    text-decoration: none;
+    font-size: 25px;
+    width: 100%;
+    display: block;
+    margin-bottom: 15px;
+    padding: 10px;
+    color: aliceblue;
+}
+.leftsidenav a:hover{
+    color: aliceblue;
+}

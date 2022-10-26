@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
-import Courses from "../../Pages/Courses/Courses";
+import CourseDetails from "../../Pages/Courses/CourseDetails/CourseDetails";
+import Courses from "../../Pages/Courses/Courses/Courses";
+import LeftSideNav from "../../Pages/Courses/LeftSideNav/LeftSideNav";
 import FAQ from "../../Pages/FAQ/FAQ";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
@@ -25,6 +27,10 @@ export const router = createBrowserRouter([
                 }
             },
             {
+                path: '/leftsidenav',
+                element: <LeftSideNav></LeftSideNav>
+            },
+            {
                 path: '/blog',
                 element: <Blog></Blog>
             },
@@ -43,7 +49,14 @@ export const router = createBrowserRouter([
             {
                 path: '/footer',
                 element: <Footer></Footer>
-            }
+            },
+            {
+                path: '/coursedetails/:id',
+                element: <CourseDetails></CourseDetails>,
+                loader: ({params}) => {
+                    return fetch(`http://localhost:5000/categories/${params.id}`)
+                }
+            },
         ]
     }
 ])

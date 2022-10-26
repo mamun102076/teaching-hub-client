@@ -1,0 +1,7 @@
+.coursecard a{
+    color: white;
+    text-decoration: none;
+}
+.coursecard a:hover{
+    color: white;
+}

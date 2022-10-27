@@ -5,15 +5,16 @@ import './Login.css'
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-import { GoogleAuthProvider } from 'firebase/auth';
+import { GithubAuthProvider, GoogleAuthProvider } from 'firebase/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
 const Login = () => {
     const [error, setError] = useState('')
-    const { googleLogin, signIn } = useContext(AuthContext)
+    const { googleLogin, signIn, githubSignIn } = useContext(AuthContext)
     const navigate = useNavigate()
     const googleProvier = new GoogleAuthProvider()
+    const githubProvider = new GithubAuthProvider()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
     const handleGoogleLogin = () => {
@@ -25,6 +26,19 @@ const Login = () => {
             })
             .catch(error => console.error(error))
     }
+
+    const handleGithub = () => {
+        githubSignIn(githubProvider)
+        .then(result => {
+            const user = result.user
+            console.log(user)
+            navigate(from, { replace: true })
+        })
+        .catch(error => {
+            setError(error.message)
+        })
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
         const form = event.target
@@ -64,7 +78,7 @@ const Login = () => {
             <div>
                 <p className='text-center text-muted'><small>------or-----</small></p>
                 <Button onClick={handleGoogleLogin} variant="outline-primary"><FaGoogle></FaGoogle> Login With Google</Button>
-                <Button variant="outline-dark"><FaGithub></FaGithub> Login With GitHub</Button>
+                <Button onClick={handleGithub} variant="outline-dark"><FaGithub></FaGithub> Login With GitHub</Button>
             </div>
         </div>
     );

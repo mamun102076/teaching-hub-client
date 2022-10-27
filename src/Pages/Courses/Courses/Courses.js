@@ -20,6 +20,7 @@ const Courses = () => {
                         </div>
                     </Col>
                     <Col lg='9'>
+                        <h1 className='text-center my-3'>All our courses</h1>
                         <Row>
                             {
                                 category.map(category => <CaourseCard key={category.id} category={category}></CaourseCard>)

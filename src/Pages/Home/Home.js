@@ -1,9 +1,15 @@
 import React from 'react';
+import BrandCarousel from '../Shared/BrandCarousel/BrandCarousel';
 
 const Home = () => {
     return (
         <div>
-            <h2>This is Home page</h2>
+            <div>
+                <BrandCarousel></BrandCarousel>
+            </div>
+            <div>
+                
+            </div>
         </div>
     );
 };

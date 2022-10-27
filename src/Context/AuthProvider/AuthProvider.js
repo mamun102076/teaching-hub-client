@@ -29,6 +29,7 @@ const AuthProvider = ({children}) => {
     }
 
     const githubSignIn = (provider) => {
+        setLoading(true)
         return signInWithPopup(auth,provider)
     }
  

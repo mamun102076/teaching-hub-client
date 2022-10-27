@@ -21,14 +21,14 @@ export const router = createBrowserRouter([
                 path: '/',
                 element: <Home></Home>,
                 loader: () => {
-                    return fetch('http://localhost:5000/categories')
+                    return fetch('https://teaching-hub-server-mamun102076.vercel.app/categories')
                 }
             },
             {
                 path: '/courses',
                 element: <Courses></Courses>,
                 loader: () => {
-                    return fetch('http://localhost:5000/categories')
+                    return fetch('https://teaching-hub-server-mamun102076.vercel.app/categories')
                 }
             },
             {
@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
                 path: '/coursedetails/:id',
                 element: <CourseDetails></CourseDetails>,
                 loader: ({params}) => {
-                    return fetch(`http://localhost:5000/categories/${params.id}`)
+                    return fetch(`https://teaching-hub-server-mamun102076.vercel.app/categories/${params.id}`)
                 }
             },
             {
@@ -68,7 +68,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '*',
-                element: <Home></Home>
+                element: <h1 className="my-5">No data found</h1>
             }
         ]
     }

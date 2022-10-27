@@ -26,7 +26,7 @@ const Header = () => {
                         { 'width': '80px' }
                     } src={brand1} alt="img" />
                 </>
-                <Navbar.Brand>Teaching Hub</Navbar.Brand>
+                <Navbar.Brand><Link to='/'>Teaching Hub</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="ms-auto">

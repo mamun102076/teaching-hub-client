@@ -1,0 +1,20 @@
+footer{
+    background-color: teal;
+    text-align: center;
+    padding: 60px 0;
+}
+footer a{
+    font-size: 30px;
+    display: inline-block;
+    color: white;
+    margin-right: 35px;
+    text-decoration: none;
+}
+.footer-copyright{
+    color: white;
+    font-size: 21px;
+}
+.footer-copyright a{
+    margin-left: 10px;
+    color: rgb(226, 185, 185);
+}

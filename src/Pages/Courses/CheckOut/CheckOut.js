@@ -1,5 +1,6 @@
 import React from 'react';
 import { useContext } from 'react';
+import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
@@ -8,8 +9,8 @@ const CheckOut = () => {
     const {user} = useContext(AuthContext)
     console.log(user)
     return (
-        <div>
-            <Form>
+        <Container>
+            <Form className='my-5'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Full Name:</Form.Label>
                     <Form.Control name='name' type="text" placeholder="Enter Name"/>
@@ -29,7 +30,7 @@ const CheckOut = () => {
                     Confirm Checkout
                 </Button>
             </Form>
-        </div>
+        </Container>
     );
 };
 

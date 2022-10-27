@@ -9,7 +9,6 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import { Button } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
-import Image from 'react-bootstrap/Image'
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext)
@@ -22,9 +21,11 @@ const Header = () => {
     return (
         <Navbar className='nav-bar' collapseOnSelect expand="lg" bg="primary" variant="dark">
             <Container>
-                <img className='me-3' style={
-                    { 'width': '80px' }
-                } src={brand1} alt="" />
+                <>
+                    <img className='me-3' style={
+                        { 'width': '80px' }
+                    } src={brand1} alt="img" />
+                </>
                 <Navbar.Brand>Teaching Hub</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
@@ -37,7 +38,7 @@ const Header = () => {
                     <Nav>
                         {
                             user?.photoURL ?
-                                <Image>{user?.photoURL}</Image>
+                                <img style={{width: '40px'}} src={user?.photoURL} alt="" />
                                 :
                                 <FaUser></FaUser>
                         }

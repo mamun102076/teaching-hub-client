@@ -9,25 +9,14 @@ const BrandCarousel = () => {
     return (
         <Carousel className='carousel'>
             <Carousel.Item interval={1000}>
-                <img
-                    className="d-block w-100"
-                    src={c2}
-                    alt="First slide"
-                />
+                <img className="d-block w-100" src={c2} alt="First slide"/>
             </Carousel.Item>
             <Carousel.Item interval={500}>
-                <img
-                    className="d-block w-100"
-                    src={typescript1}
-                    alt="Second slide"
+                <img className="d-block w-100" src={typescript1} alt="Second slide"
                 />
             </Carousel.Item>
             <Carousel.Item>
-                <img
-                    className="d-block w-100"
-                    src={java1}
-                    alt="Third slide"
-                />
+                <img className="d-block w-100" src={java1} alt="Third slide"/>
             </Carousel.Item>
         </Carousel>
     );

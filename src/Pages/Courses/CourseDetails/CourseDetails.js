@@ -9,7 +9,7 @@ const CourseDetails = ({ category }) => {
         <Container className='coursedetails my-4'>
             <div className='d-flex justify-content-between mb-4'>
                 <h3>{coursedetails.title}</h3>
-                <Button variant="outline-secondary">Dwonload PDF</Button>
+                {/* <Button variant="outline-secondary">Dwonload PDF</Button> */}
             </div>
             <img src={coursedetails.image_url} alt="img" />
             <div className='mt-4'>

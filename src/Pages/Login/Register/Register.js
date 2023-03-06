@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const Register = () => {
-    const { createUser } = useContext(AuthContext)
+    const { createUser, updateUser } = useContext(AuthContext)
     const navigate = useNavigate()
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -20,7 +20,15 @@ const Register = () => {
             .then(result => {
                 const user = result.user
                 console.log(user)
-                navigate('/')
+                const userInfo = {
+                    displayName: name,
+                    photoURL: photoURL
+                }
+                updateUser(userInfo)
+                .then(() => {
+                    navigate('/')
+                })
+                .catch(error => console.log(error))
             })
             .catch(error => console.error(error))
     }

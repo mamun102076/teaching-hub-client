@@ -7,7 +7,6 @@ import './Header.css'
 import brand1 from '../../../assets/brands/brand3.png'
 import { useContext } from 'react';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
-import { Button } from 'react-bootstrap';
 import { FaUser } from 'react-icons/fa';
 
 const Header = () => {
@@ -35,26 +34,27 @@ const Header = () => {
                         <Link to='/blog'>Blog</Link>
                         <Link to='/faq'>FAQ</Link>
                     </Nav>
-                    <Nav>
-                        {
-                            user?.photoURL ?
-                                <img style={{width: '40px'}} src={user?.photoURL} alt="" />
-                                :
-                                <FaUser></FaUser>
-                        }
-                    </Nav>
+                    
                     <Nav>
                         {
                             user?.uid ?
                                 <>
                                     <Link to='/'>{user?.displayName}</Link>
-                                    <Button onClick={handleLogOut} variant="primary">Log out</Button>
+                                    <Link onClick={handleLogOut} variant="primary">Log out</Link>
                                 </>
 
                                 :
                                 <>
                                     <Link to='/login'>Login</Link>
                                 </>
+                        }
+                    </Nav>
+                    <Nav>
+                        {
+                            user?.photoURL ?
+                                <Link><img style={{width: '40px'}} src={user?.photoURL} alt="" /></Link>
+                                :
+                                <Link><FaUser></FaUser></Link>
                         }
                     </Nav>
                 </Navbar.Collapse>

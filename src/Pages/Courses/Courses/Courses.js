@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import CaourseCard from '../CaourseCard/CaourseCard';
 import LeftSideNav from '../LeftSideNav/LeftSideNav';
@@ -7,10 +7,9 @@ import './Courses.css'
 
 const Courses = () => {
     const category = useLoaderData()
-    console.log(category)
     return (
         <div className='courses'>
-            <div>
+            <Container fluid>
                 <Row>
                     <Col lg='3'>
                         <div className='courses-left mt-3'>
@@ -28,7 +27,7 @@ const Courses = () => {
                         </Row>
                     </Col>
                 </Row>
-            </div>
+            </Container>
         </div>
     );
 };

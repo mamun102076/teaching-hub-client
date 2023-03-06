@@ -1,13 +1,9 @@
 import React from 'react';
-import { useContext } from 'react';
 import { Container } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const CheckOut = () => {
-    const {user} = useContext(AuthContext)
-    console.log(user)
     return (
         <Container>
             <Form className='my-5'>
